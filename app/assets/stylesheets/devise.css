@@ -1,0 +1,149 @@
+.auth-page {
+    min-height: 100vh;
+    margin: 0;
+    background: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-family: "Nunito", sans-serif;
+}
+
+.auth-card {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.auth-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.rainbow-small {
+    width: 80px;
+    height: auto;
+    margin-bottom: 0.5rem;
+}
+
+.auth-brand {
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+}
+
+.auth-card h2 {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--color-ink);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.auth-card .field {
+    margin-bottom: 1.1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-card .field label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-ink);
+    margin-bottom: 0.4rem;
+}
+
+.auth-card input[type="email"],
+.auth-card input[type="password"],
+.auth-card input[type="text"] {
+    font-family: "Nunito", sans-serif;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid #E5DED4;
+    border-radius: 12px;
+    background: var(--color-bg);
+    color: var(--color-ink);
+    transition: border-color 0.15s ease;
+}
+
+.auth-card input[type="email"]:focus,
+.auth-card input[type="password"]:focus,
+.auth-card input[type="text"]:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+}
+
+.auth-card .field input[type="checkbox"] {
+    margin-right: 0.5rem;
+    accent-color: var(--color-primary);
+}
+
+.auth-card .actions {
+    margin-top: 1.5rem;
+}
+
+.auth-card .actions input[type="submit"] {
+    width: 100%;
+    font-family: "Nunito", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.85rem;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.auth-card .actions input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.auth-card p {
+    text-align: center;
+    margin-top: 1.2rem;
+    font-size: 0.9rem;
+}
+
+.auth-card a {
+    color: var(--color-secondary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.auth-card a:hover {
+    text-decoration: underline;
+}
+
+#error_explanation {
+    background: #FBEAE8;
+    border: 1px solid #E8B4AC;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+#error_explanation h2 {
+    font-size: 0.9rem;
+    color: #B5423A;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+#error_explanation ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.85rem;
+    color: #B5423A;
+}
