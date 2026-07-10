@@ -5,7 +5,7 @@ class CreateWords < ActiveRecord::Migration[8.1]
       t.string :real_meaning
       t.text :context
       t.date :said_on
-      t.references :kid, null: false, foreign_key: true
+      t.references :child, null: false, foreign_key: true
 
       t.timestamps
     end

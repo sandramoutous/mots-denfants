@@ -1,6 +1,6 @@
-class CreateKids < ActiveRecord::Migration[8.1]
+class CreateChildren < ActiveRecord::Migration[8.1]
   def change
-    create_table :kids do |t|
+    create_table :children do |t|
       t.string :name
       t.date :date_of_birth
       t.references :user, null: false, foreign_key: true

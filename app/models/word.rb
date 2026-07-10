@@ -1,3 +1,3 @@
 class Word < ApplicationRecord
-  belongs_to :kid
+  belongs_to :child
 end
