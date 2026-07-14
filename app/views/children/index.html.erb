@@ -1,0 +1,19 @@
+<div class="dashboard">
+  <div class="dashboard-header">
+    <h1>Mes enfants</h1>
+    <%= link_to "Ajouter un enfant", new_child_path, class: "btn-primary" %>
+  </div>
+
+  <div class="children-grid">
+    <% @children.each do |child| %>
+      <%= link_to child, class: "child-card" do %>
+        <span class="child-name"><%= child.first_name %></span>
+        <span class="child-meta"><%= child.words.count %> mot(s)</span>
+      <% end %>
+    <% end %>
+  </div>
+
+  <% if @children.empty? %>
+    <p class="empty-state">Pas encore d'enfant ajouté. Commence par en créer un.</p>
+  <% end %>
+</div>

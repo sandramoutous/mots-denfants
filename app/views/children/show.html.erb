@@ -1,0 +1,26 @@
+<div class="dashboard">
+  <div class="dashboard-header">
+    <h1><%= @child.name %></h1>
+    <div class="header-actions">
+      <%= link_to "Modifier", edit_child_path(@child), class: "btn-secondary" %>
+      <%= link_to "Ajouter un mot", new_child_word_path(@child), class: "btn-primary" %>
+    </div>
+  </div>
+
+  <ul class="words-list">
+    <% @words.each do |word| %>
+      <li class="word-item">
+        <span class="word-content"><%= word.content %></span>
+        <span class="word-date"><%= word.said_on&.strftime("%d/%m/%Y") %></span>
+        <div class="word-actions">
+          <%= link_to "Modifier", edit_child_word_path(@child, word) %>
+          <%= link_to "Supprimer", child_word_path(@child, word), data: { turbo_method: :delete, turbo_confirm: "Supprimer ce mot ?" } %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+  <% if @words.empty? %>
+    <p class="empty-state">Aucun mot enregistré pour l'instant.</p>
+  <% end %>
+</div>

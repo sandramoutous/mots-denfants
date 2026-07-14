@@ -8,3 +8,105 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+.dashboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: "Nunito", sans-serif;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.dashboard-header h1 {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    color: var(--color-ink);
+}
+
+.children-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.child-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: transform 0.15s ease;
+}
+
+.child-card:hover {
+    transform: translateY(-3px);
+}
+
+.child-name {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--color-ink);
+}
+
+.child-meta {
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+}
+
+.words-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.word-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.6rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.word-content {
+    font-family: "Fredoka", sans-serif;
+    font-weight: 500;
+    color: var(--color-ink);
+}
+
+.word-date {
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+}
+
+.word-actions a {
+    font-size: 0.8rem;
+    color: var(--color-primary);
+    margin-left: 0.8rem;
+    text-decoration: none;
+}
+
+.header-actions {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.empty-state {
+    text-align: center;
+    color: var(--color-ink);
+    opacity: 0.6;
+    margin-top: 2rem;
+}

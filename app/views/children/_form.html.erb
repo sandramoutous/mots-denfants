@@ -1,0 +1,15 @@
+<%= form_with model: @child, local: true, class: "auth-card" do |f| %>
+  <div class="field">
+    <%= f.label :first_name, "Prénom" %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthdate, "Date de naissance" %>
+    <%= f.date_field :birthdate %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit @child.persisted? ? "Enregistrer" : "Créer", class: "btn-primary" %>
+  </div>
+<% end %>

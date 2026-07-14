@@ -1,0 +1,15 @@
+<%= form_with model: [@child, @word], local: true, class: "auth-card" do |f| %>
+  <div class="field">
+    <%= f.label :content, "Le mot" %>
+    <%= f.text_field :content %>
+  </div>
+
+  <div class="field">
+    <%= f.label :said_on, "Dit le" %>
+    <%= f.date_field :said_on %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Enregistrer", class: "btn-primary" %>
+  </div>
+<% end %>
