@@ -1,0 +1,47 @@
+class WordsController < ApplicationController
+  before_action :set_child
+  before_action :set_word, only: [ :edit, :update, :destroy ]
+
+  def new
+    @word = @child.words.new
+  end
+
+  def create
+    @word = @child.words.new(word_params)
+    if @word.save
+      redirect_to @child, notice: "\"#{@word.content}\" ajouté au carnet."
+    else
+      redirect_to @child, alert: "Impossible d'ajouter ce mot."
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @word.update(word_params)
+      redirect_to @child, notice: "Mot mis à jour."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @word.destroy
+    redirect_to @child, notice: "Mot supprimé."
+  end
+
+  private
+
+  def set_child
+    @child = current_user.children.find(params[:child_id])
+  end
+
+  def set_word
+    @word = @child.words.find(params[:id])
+  end
+
+  def word_params
+    params.require(:word).permit(:content, :said_on)
+  end
+end
