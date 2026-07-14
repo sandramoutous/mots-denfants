@@ -10,8 +10,18 @@
   <ul class="words-list">
     <% @words.each do |word| %>
       <li class="word-item">
-        <span class="word-content"><%= word.content %></span>
+        <div class="word-main">
+          <span class="word-baby-version">« <%= word.baby_version %> »</span>
+          <span class="word-arrow">→</span>
+          <span class="word-real-meaning"><%= word.real_meaning %></span>
+        </div>
+        <% if word.context.present? %>
+          <p class="word-context"><%= word.context %></p>
+        <% end %>
         <span class="word-date"><%= word.said_on&.strftime("%d/%m/%Y") %></span>
+        <% if word.audio.attached? %>
+          <audio controls src="<%= url_for(word.audio) %>"></audio>
+        <% end %>
         <div class="word-actions">
           <%= link_to "Modifier", edit_child_word_path(@child, word) %>
           <%= link_to "Supprimer", child_word_path(@child, word), data: { turbo_method: :delete, turbo_confirm: "Supprimer ce mot ?" } %>

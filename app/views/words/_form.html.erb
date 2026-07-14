@@ -1,12 +1,27 @@
 <%= form_with model: [@child, @word], local: true, class: "auth-card" do |f| %>
   <div class="field">
-    <%= f.label :content, "Le mot" %>
-    <%= f.text_field :content %>
+    <%= f.label :baby_version, "Ce qu'il/elle a dit" %>
+    <%= f.text_field :baby_version, placeholder: "mani" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :real_meaning, "Ce que ça voulait dire" %>
+    <%= f.text_field :real_meaning, placeholder: "merci" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :context, "Contexte (optionnel)" %>
+    <%= f.text_area :context, placeholder: "Le disait à chaque fin de repas..." %>
   </div>
 
   <div class="field">
     <%= f.label :said_on, "Dit le" %>
     <%= f.date_field :said_on %>
+  </div>
+
+  <div class="field">
+    <%= f.label :audio, "Enregistrement (optionnel)" %>
+    <%= f.file_field :audio, accept: "audio/*" %>
   </div>
 
   <div class="actions">

@@ -7,7 +7,7 @@
   <div class="children-grid">
     <% @children.each do |child| %>
       <%= link_to child, class: "child-card" do %>
-        <span class="child-name"><%= child.first_name %></span>
+        <span class="child-name"><%= child.name %></span>
         <span class="child-meta"><%= child.words.count %> mot(s)</span>
       <% end %>
     <% end %>

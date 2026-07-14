@@ -1,2 +1,4 @@
-<h1><%= @child.persisted? ? "Modifier #{@child.first_name}" : "Ajouter un enfant" %></h1>
-<%= render "form" %>
+<div class="form-page">
+  <h1><%= @child.persisted? ? "Modifier #{@child.name}" : "Ajouter un enfant" %></h1>
+  <%= render "form" %>
+</div>

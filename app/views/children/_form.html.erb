@@ -1,12 +1,12 @@
 <%= form_with model: @child, local: true, class: "auth-card" do |f| %>
   <div class="field">
-    <%= f.label :first_name, "Prénom" %>
-    <%= f.text_field :first_name %>
+    <%= f.label :name, "Prénom" %>
+    <%= f.text_field :name %>
   </div>
 
   <div class="field">
-    <%= f.label :birthdate, "Date de naissance" %>
-    <%= f.date_field :birthdate %>
+    <%= f.label :date_of_birth, "Date de naissance" %>
+    <%= f.date_field :date_of_birth %>
   </div>
 
   <div class="actions">

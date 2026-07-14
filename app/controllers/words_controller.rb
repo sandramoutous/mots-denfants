@@ -42,6 +42,6 @@ class WordsController < ApplicationController
   end
 
   def word_params
-    params.require(:word).permit(:content, :said_on)
+    params.require(:word).permit(:baby_version, :real_meaning, :context, :said_on, :audio)
   end
 end

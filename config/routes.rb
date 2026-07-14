@@ -10,6 +10,6 @@ Rails.application.routes.draw do
 
   root "home#index"
   resources :children do
-    resources :words, only: [:new, :create, :edit, :update, :destroy]
+    resources :words, only: [ :new, :create, :edit, :update, :destroy ]
   end
 end
