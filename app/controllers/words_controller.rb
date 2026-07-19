@@ -9,7 +9,7 @@ class WordsController < ApplicationController
   def create
     @word = @child.words.new(word_params)
     if @word.save
-      redirect_to @child, notice: "\"#{@word.content}\" ajouté au carnet."
+      redirect_to @child, notice: "\"#{@word.baby_version}\" ajouté au carnet."
     else
       redirect_to @child, alert: "Impossible d'ajouter ce mot."
     end

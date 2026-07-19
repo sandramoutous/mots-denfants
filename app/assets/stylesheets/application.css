@@ -8,6 +8,15 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+body {
+  margin: 0px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
 .dashboard {
   max-width: 800px;
   margin: 0 auto;
@@ -28,6 +37,30 @@
   font-family: "Fredoka", sans-serif;
   font-weight: 600;
   color: var(--color-ink);
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: solid 2px var(--color-secondary);
+  background: #fff;
+  color: #2b1e1a; /* même teinte foncée que le titre */
+  flex-shrink: 0;
+  transition: background 0.15s ease;
+}
+
+.back-button:hover {
+  background: #ebe6db;
 }
 
 .children-grid {
@@ -157,4 +190,79 @@
   color: var(--color-ink);
   margin-bottom: 1.5rem;
   text-align: center;
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: #faf3ea;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.navbar-logo {
+  height: 32px;
+}
+
+.navbar-title {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  color: #d2691e; /* terracotta */
+  font-size: 1.1rem;
+}
+
+.account-menu {
+  position: relative;
+}
+
+.account-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f4f1ea;
+  color: #d2691e;
+  cursor: pointer;
+  list-style: none;
+}
+.account-icon::-webkit-details-marker {
+  display: none;
+}
+
+.account-dropdown {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  min-width: 160px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 1rem;
+  text-align: left;
+  font-family: "Nunito", sans-serif;
+  color: #333;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.dropdown-item:hover {
+  background: #f4f1ea;
 }

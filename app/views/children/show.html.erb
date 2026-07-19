@@ -1,34 +1,41 @@
 <div class="dashboard">
   <div class="dashboard-header">
-    <h1><%= @child.name %></h1>
+    <div class="title-row">
+      <%= link_to children_path, class: "back-button" do %>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      <% end %>
+      <h1><%= @child.name %></h1>
+    </div>
     <div class="header-actions">
       <%= link_to "Modifier", edit_child_path(@child), class: "btn-secondary" %>
       <%= link_to "Ajouter un mot", new_child_word_path(@child), class: "btn-primary" %>
     </div>
   </div>
 
-  <ul class="words-list">
+  <table class="table">
     <% @words.each do |word| %>
-      <li class="word-item">
-        <div class="word-main">
-          <span class="word-baby-version">« <%= word.baby_version %> »</span>
-          <span class="word-arrow">→</span>
-          <span class="word-real-meaning"><%= word.real_meaning %></span>
-        </div>
-        <% if word.context.present? %>
-          <p class="word-context"><%= word.context %></p>
-        <% end %>
-        <span class="word-date"><%= word.said_on&.strftime("%d/%m/%Y") %></span>
-        <% if word.audio.attached? %>
-          <audio controls src="<%= url_for(word.audio) %>"></audio>
-        <% end %>
-        <div class="word-actions">
-          <%= link_to "Modifier", edit_child_word_path(@child, word) %>
-          <%= link_to "Supprimer", child_word_path(@child, word), data: { turbo_method: :delete, turbo_confirm: "Supprimer ce mot ?" } %>
-        </div>
-      </li>
+      <tr class="words-list">
+        <td class="word-item">
+          <div class="word-main">
+            <span class="word-baby-version">
+              « <%= word.baby_version %> »
+              </span>
+            <span class="word-arrow">→</span>
+            <span class="word-real-meaning"><%= word.real_meaning %></span>
+          </div>
+        </td>
+        <td class="word-date"><%= word.said_on&.strftime("%d/%m/%Y") %></td>
+        <td>
+          <div class="word-actions">
+            <%= link_to "Modifier", edit_child_word_path(@child, word) %>
+            <%= link_to "Supprimer", child_word_path(@child, word), data: { turbo_method: :delete, turbo_confirm: "Supprimer ce mot ?" } %>
+          </div>
+        </td>
+      </tr>
     <% end %>
-  </ul>
+  </table>
 
   <% if @words.empty? %>
     <p class="empty-state">Aucun mot enregistré pour l'instant.</p>
