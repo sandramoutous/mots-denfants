@@ -16,7 +16,7 @@ class ChildrenController < ApplicationController
   def create
     @child = current_user.children.new(child_params)
     if @child.save
-      redirect_to @child, notice: "#{@child.first_name} a été ajouté(e)."
+      redirect_to @child, notice: "#{@child.name} a été ajouté(e)."
     else
       render :new, status: :unprocessable_entity
     end
@@ -35,7 +35,7 @@ class ChildrenController < ApplicationController
 
   def destroy
     @child.destroy
-    redirect_to children_path, notice: "#{@child.first_name} a été supprimé(e)."
+    redirect_to children_path, notice: "#{@child.name} a été supprimé(e)."
   end
 
   private
